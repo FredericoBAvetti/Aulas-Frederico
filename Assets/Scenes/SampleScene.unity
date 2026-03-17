@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -419,6 +418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4240688176009248835, guid: 4a94b2584db7cf144b18994796d63c89, type: 3}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 6466353597461085052, guid: 2a5c87354c85a8849823309c184fac01, type: 3}
     - target: {fileID: 7988332884835414682, guid: 4a94b2584db7cf144b18994796d63c89, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
