@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,14 @@ public class EnemyController : MonoBehaviour
     public Rigidbody2D Rb;
 
     public Transform Target;
+
+    internal void TakeDamage(int damage){
+        Hp -= damage;
+        if (Hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Awake(){
         Rb = GetComponent<Rigidbody2D>();

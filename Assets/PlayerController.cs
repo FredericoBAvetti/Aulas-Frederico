@@ -16,13 +16,24 @@ public class PlayerController : MonoBehaviour {
 
     public Vector2 Direction;
 
-    void Update() {
-        Horizontal = Input.GetAxis("Horizontal");
-        Vertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(Horizontal, Vertical, 0f) * Speed * Time.deltaTime;
-        transform.Translate(movement);
+    public Rigidbody2D Rb;
 
-        if (Input.GetKeyDown(KeyCode.RightArrow)){
+    private void Awake()
+    {
+        TryGetComponent<Rigidbody2D>(out Rb);
+    }
+
+    void Update()
+    {
+        Move();
+
+        Rotate();
+    }
+
+    private void Rotate()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
             transform.rotation = Quaternion.Euler(0, 0, 0);
             Shoot();
         }
@@ -41,9 +52,14 @@ public class PlayerController : MonoBehaviour {
             transform.rotation = Quaternion.Euler(0, 0, -90);
             Shoot();
         }
+    }
 
-
-
+    private void Move()
+    {
+        Horizontal = Input.GetAxis("Horizontal");
+        Vertical = Input.GetAxis("Vertical");
+        Direction = new Vector2(Horizontal, Vertical).normalized;
+        Rb.velocity = Speed * Direction;
     }
 
     private void Shoot()
@@ -65,15 +81,6 @@ public class PlayerController : MonoBehaviour {
                     Debug.Log("Player encostou em trigger");
                 }
             }
-
-
-
-
-
-
-
-
-
 
 
 

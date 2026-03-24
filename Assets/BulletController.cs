@@ -10,6 +10,8 @@ public class BulletController : MonoBehaviour
 
     public float DestroyTime = 2f;
 
+    public int Damage = 1;
+
     void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
@@ -26,7 +28,21 @@ public class BulletController : MonoBehaviour
         Destroy(gameObject);
     }
 
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.TryGetComponent<PlayerController>(out _))
+        {
+            return;
+        }
+        
+        EnemyController enemy;
+        if(collision.TryGetComponent<EnemyController>(out enemy))
+        {
+            enemy.TakeDamage(Damage);
+            
+        }
+        Destroy(gameObject);
+    }
 
 
 
