@@ -39,9 +39,9 @@ public class BulletController : MonoBehaviour
         if(collision.TryGetComponent<EnemyController>(out enemy))
         {
             enemy.TakeDamage(Damage);
-            
+            Destroy(gameObject); 
         }
-        Destroy(gameObject);
+       
     }
 
 
