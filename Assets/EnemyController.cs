@@ -8,11 +8,14 @@ public class EnemyController : MonoBehaviour
 {
     public float Speed = 3f;
 
-    public int Hp = 2;
+    public int Hp = 4;
 
     public Rigidbody2D Rb;
 
     public Transform Target;
+
+    public int Damage = 10;
+
 
     internal void TakeDamage(int damage){
         Hp -= damage;

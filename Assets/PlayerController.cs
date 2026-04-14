@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -80,8 +81,24 @@ public class PlayerController : MonoBehaviour {
                 {
                     Debug.Log("Player encostou em trigger");
                 }
+                if (collision.TryGetComponent(out EnemyController enemy)){
+                    TakeDamage(enemy.Damage);
+                }
             }
 
+    private void TakeDamage(int damage)
+    {
+        Health -= damage;
+        HudController.Instance.ChangeHpPoint(Health);
+        if (Health <= 0)
+        {
+            Die();
+        }
+        
+    }
 
-
+    private void Die()
+    {
+        throw new NotImplementedException();
+    }
 }

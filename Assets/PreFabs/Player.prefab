@@ -206,3 +206,7 @@ MonoBehaviour:
   Speed: 5
   Horizontal: 0
   Vertical: 0
+  Health: 100
+  BulletPrefab: {fileID: 0}
+  Direction: {x: 0, y: 0}
+  Rb: {fileID: 0}
