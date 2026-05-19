@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour {
 
     public Rigidbody2D Rb;
 
+    [SerializeField]
+    private int ammo = 40;
+
     private void Awake()
     {
         TryGetComponent<Rigidbody2D>(out Rb);
@@ -65,10 +68,17 @@ public class PlayerController : MonoBehaviour {
 
     private void Shoot()
     {
+        if (ammo <= 0){
+            Debug.Log("Sem munição!");
+            return;
+        }
+
         if (BulletPrefab != null)
         {
             Instantiate(BulletPrefab, transform.position, transform.rotation);
+            ammo--;
         }
+
         else
         {
             Debug.Break();
