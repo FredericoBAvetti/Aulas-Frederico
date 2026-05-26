@@ -1045,6 +1045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPos: {fileID: 0}
   EnemyPrefab: {fileID: 609314980461875058, guid: 27f61e4b2e1a6eb4cb8ab16fec32dbbe, type: 3}
+  ammoPreFab: {fileID: 1339981559967255565}
   XOffset: 50
   YOffset: 50
   SpawnCd: 1
@@ -1053,6 +1054,7 @@ MonoBehaviour:
   EnemyCount: 0
   WaveCount: 1
   MaxWave: 5
+  Score: 0
 --- !u!4 &1887809143
 Transform:
   m_ObjectHideFlags: 0
@@ -1190,6 +1192,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a5c87354c85a8849823309c184fac01, type: 3}
+--- !u!1 &1339981559967255565 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6466353597461085052, guid: 2a5c87354c85a8849823309c184fac01, type: 3}
+  m_PrefabInstance: {fileID: 1339981559967255564}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8472472079692883095
 PrefabInstance:
   m_ObjectHideFlags: 0
